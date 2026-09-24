@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VITBARA - Virtual Tour Bangun Ruang</title>
+
+  <!-- SEO & Social Meta -->
+  <meta name="description"
+    content="Media pembelajaran matematika berbasis virtual tour Benteng Fort Willem I untuk materi geometri bangun ruang SMP kelas 9.">
+  <meta name="keywords"
+    content="VITBARA, virtual tour, bangun ruang, geometri, SMP kelas 9, Fort Willem I, Benteng Pendem Ambarawa, UNIMUS, matematika">
+  <meta name="author" content="Universitas Muhammadiyah Semarang">
+  <meta property="og:title" content="VITBARA - Virtual Tour Bangun Ruang">
+  <meta property="og:description"
+    content="Modern Heritage Learning Experience: Menghubungkan Geometri Bangun Ruang SMP Kelas 9 dengan Eksplorasi Cagar Budaya Benteng Fort Willem I.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/heritage/fort_hero_bg.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logos/vitbara.svg">
+
+  <!-- Google Fonts: Poppins (Heading) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css?v=1.0.0">
+</head>
+
+<body>
+
+  <!-- Header & Sticky Responsive Navbar -->
+  <header class="site-header">
+    <div class="container navbar-container">
+      <!-- Brand Logos (UNIMUS & VITBARA) -->
+      <a href="index.php" class="brand-group" aria-label="VITBARA Home">
+        <img src="assets/images/logos/logo unimus.png" alt="Logo UNIMUS" class="logo-unimus" height="40">
+        <div class="brand-separator"></div>
+        <img src="assets/images/logos/logo vitbara.png" alt="Logo VITBARA" class="logo-vitbara" height="40">
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navigation Menu Items (Home | Sejarah | E-Modul | Eksplor VR | Game Learning | Evaluasi | About Us | Contact Us) -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.php" class="nav-link active">Home</a>
+        <a href="sejarah.php" class="nav-link">Sejarah</a>
+        <a href="emodul.php" class="nav-link">E-Modul</a>
+        <a href="eksplor-vr.php" class="nav-link">Eksplor VR</a>
+        <a href="game-learning.php" class="nav-link">Game Learning</a>
+        <a href="evaluasi.php" class="nav-link">Evaluasi</a>
+        <a href="about.php" class="nav-link">About Us</a>
+        <a href="contact.php" class="nav-link">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ========================================================================
+       SLIDE 1 — SELAMAT DATANG DI VITBARA (HERO SECTION)
+       ======================================================================== -->
+    <section id="slide-1" class="hero-section">
+      <!-- Background Video Autoplay Loop -->
+      <video class="hero-bg-video" autoplay muted loop playsinline poster="assets/images/heritage/fort_hero_bg.svg">
+        <source src="assets/images/heritage/Landing Page Fix.mp4" type="video/mp4">
+        Browser Anda tidak mendukung pemutaran video.
+      </video>
+
+      <!-- Gradient Overlay for Contrast -->
+      <div class="hero-overlay"></div>
+
+      <!-- Interactive 3D Geometry Canvas -->
+      <canvas id="heroGeometryCanvas"></canvas>
+
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span>🏛</span> Benteng Fort Willem I
+          </div>
+
+          <h1 class="hero-title">
+            Selamat Datang di <span class="text-gold hero-title-brand">VITBARA <img
+                src="assets/images/heritage/kepala mascot.png" alt="Maskot Bara" class="hero-mascot-head"
+                title="Halo! Aku Bara 🐱"></span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Virtual Tour Bangun Ruang
+          </p>
+
+          <p class="hero-desc">
+            VITBARA adalah media pembelajaran matematika berbasis virtual tour yang akan membantu kamu belajar materi
+            geometri dengan cara yang menyenangkan dan bermakna. Temukan konsep geometri melalui arsitektur, sejarah,
+            dan
+            budaya di Benteng Fort Willem I.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#slide-2" class="btn btn-primary">
+              <span class="btn-icon">🧭</span> Mulai Jelajah!
+            </a>
+            <a href="eksplor-vr.php" class="btn btn-white-outline">
+              <span class="btn-icon">🥽</span> Eksplor VR
+            </a>
+          </div>
+        </div>
+
+        <!-- Mini Feature Highlight Badges - Full Width From Left To Right -->
+        <div class="hero-features-preview">
+          <div class="hero-mini-card">
+            <div class="hero-mini-icon">📐</div>
+            <div class="hero-mini-text">Geometri Terintegrasi Virtual Tour</div>
+          </div>
+          <div class="hero-mini-card">
+            <div class="hero-mini-icon">🏰</div>
+            <div class="hero-mini-text">Benteng Fort Willem I Ambarawa</div>
+          </div>
+          <div class="hero-mini-card">
+            <div class="hero-mini-icon">💡</div>
+            <div class="hero-mini-text">Simulasi 3D &amp; Gamifikasi Edukatif</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       SLIDE 2 — TANTANGAN BELAJAR GEOMETRI
+       ======================================================================== -->
+    <section id="slide-2" class="section section-bg-secondary">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge-tag">Tantangan Pembelajaran</div>
+          <h2 class="section-title">Mengapa Belajar Geometri Terasa Sulit?</h2>
+          <p class="section-subtitle">
+            Banyak siswa mengalami kesulitan saat mempelajari materi geometri bangun ruang yang hanya mengandalkan rumus
+            teks di
+            atas kertas 2 dimensi.
+          </p>
+        </div>
+
+        <div class="challenge-grid">
+          <!-- Visual Illustration -->
+          <div class="challenge-illustration-wrap">
+            <img src="assets/images/geometry/challenge_student.png" alt="Tantangan Belajar Geometri Siswa SMP"
+              width="600" height="450" loading="lazy">
+          </div>
+
+          <!-- 3 Problem Cards -->
+          <div class="challenge-cards">
+            <!-- Problem 1 -->
+            <div class="challenge-card">
+              <div class="challenge-card-icon">🧊</div>
+              <div>
+                <h3 class="challenge-card-title">Sulit Membayangkan Bentuk 3D</h3>
+                <p class="challenge-card-desc">
+                  Siswa kesulitan memahami dan merekonstruksi bentuk tiga dimensi hanya melalui gambar datar dua dimensi
+                  pada buku teks.
+                </p>
+              </div>
+            </div>
+
+            <!-- Problem 2 -->
+            <div class="challenge-card">
+              <div class="challenge-card-icon">📄</div>
+              <div>
+                <h3 class="challenge-card-title">Pembelajaran Abstrak</h3>
+                <p class="challenge-card-desc">
+                  Konsep geometri sering dipahami sebatas rumus, gambar sketsa kaku, dan hafalan tanpa memahami makna
+                  spasial sesungguhnya.
+                </p>
+              </div>
+            </div>
+
+            <!-- Problem 3 -->
+            <div class="challenge-card">
+              <div class="challenge-card-icon">🔍</div>
+              <div>
+                <h3 class="challenge-card-title">Kurang Eksplorasi Objek Nyata</h3>
+                <p class="challenge-card-desc">
+                  Siswa belum memperoleh banyak kesempatan untuk menghubungkan konsep geometri bangun ruang dengan objek
+                  nyata di lingkungan sekitar.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transition Callout Banner -->
+        <div class="challenge-transition-banner">
+          <div>
+            <div
+              style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #94A3B8; margin-bottom: 0.3rem;">
+              Sebuah Solusi Baru</div>
+            <div class="challenge-question">
+              “Bagaimana jika belajar geometri dilakukan dengan menjelajahi objek nyata?”
+            </div>
+          </div>
+          <a href="#slide-3" class="btn btn-primary" style="white-space: nowrap;">
+            Temukan Jawabannya ➔
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       SLIDE 3 — MENGAPA BENTENG FORT WILLEM I?
+       ======================================================================== -->
+    <section id="slide-3" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge-tag">Konteks Budaya &amp; Arsitektur</div>
+          <h2 class="section-title">Mengapa Benteng Fort Willem I?</h2>
+          <p class="section-subtitle">
+            Benteng Fort Willem I (Benteng Pendem Ambarawa) adalah warisan sejarah megah abad ke-19 yang menyimpan
+            harmoni antara arsitektur kolonial dan prinsip-prinsip geometri ruang.
+          </p>
+        </div>
+
+        <!-- 3 Main Concept Pillars -->
+        <div class="fort-pillars-grid">
+          <div class="fort-pillar-card">
+            <div class="pillar-icon-box">🏛</div>
+            <h3 class="pillar-title">Cagar Budaya</h3>
+            <p class="pillar-desc">
+              Benteng Fort Willem I memiliki nilai sejarah dan budaya yang sangat tinggi sebagai cagar budaya nasional
+              di Ambarawa, Jawa Tengah.
+            </p>
+          </div>
+
+          <div class="fort-pillar-card">
+            <div class="pillar-icon-box">📐</div>
+            <h3 class="pillar-title">Arsitektur Geometris</h3>
+            <p class="pillar-desc">
+              Struktur bangunan memiliki berbagai bentuk, pola, simetri, dan relasi geometris presisi dari gerbang,
+              koridor hingga bastion pertahanan.
+            </p>
+          </div>
+
+          <div class="fort-pillar-card">
+            <div class="pillar-icon-box">🌍</div>
+            <h3 class="pillar-title">Objek Nyata Matematika</h3>
+            <p class="pillar-desc">
+              Benteng menjadi laboratorium kontekstual nyata untuk menemukan konsep volume, luas permukaan, dan
+              jaring-jaring bangun ruang secara autentik.
+            </p>
+          </div>
+        </div>
+
+        <!-- Geometric Mapping Showcase (Museum Digital) -->
+        <div class="mapping-showcase-header">
+          <h3 class="mapping-showcase-title">Eksplorasi Geometri pada Struktur Benteng</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem;">Hubungan nyata elemen arsitektur Benteng dengan
+            konsep bangun ruang</p>
+        </div>
+
+        <div class="geometric-mappings-grid">
+          <!-- Mapping 1 -->
+          <div class="mapping-card">
+            <img src="assets/images/heritage/corridor_balok.svg" alt="Koridor Benteng ke Balok"
+              class="mapping-card-img">
+            <div class="mapping-card-body">
+              <h4 class="mapping-card-title">Koridor → Balok</h4>
+              <p class="mapping-card-text">Ruang barak dan lorong memanjang mengilustrasikan rusuk panjang, lebar, dan
+                tinggi balok serta perhitungan volume (V = p × l × t).</p>
+            </div>
+          </div>
+
+          <!-- Mapping 2 -->
+          <div class="mapping-card">
+            <img src="assets/images/heritage/arch_tabung.svg" alt="Pintu Lengkung ke Tabung" class="mapping-card-img">
+            <div class="mapping-card-body">
+              <h4 class="mapping-card-title">Pintu Lengkung → Tabung</h4>
+              <p class="mapping-card-text">Lengkungan kubah bata Romanesque di gerbang benteng memvisualisasikan irisan
+                lingkaran, selimut silinder, dan bangun ruang sisi lengkung.</p>
+            </div>
+          </div>
+
+          <!-- Mapping 3 -->
+          <div class="mapping-card">
+            <img src="assets/images/heritage/plan_symmetry.svg" alt="Tata Ruang ke Simetri" class="mapping-card-img">
+            <div class="mapping-card-body">
+              <h4 class="mapping-card-title">Tata Ruang → Simetri</h4>
+              <p class="mapping-card-text">Denah benteng poligonal oktagonal menyajikan prinsip simetri lipat, sudut
+                ruang, serta konsep prisma segi-banyak yang presisi.</p>
+            </div>
+          </div>
+
+          <!-- Mapping 4 -->
+          <div class="mapping-card">
+            <img src="assets/images/heritage/pilar_dimensi.svg" alt="Pilar ke Luas Permukaan" class="mapping-card-img">
+            <div class="mapping-card-body">
+              <h4 class="mapping-card-title">Pilar &amp; Dinding → Dimensi</h4>
+              <p class="mapping-card-text">Pilar penyangga kokoh memberikan pemahaman nyata mengenai perhitungan luas
+                permukaan selimut dan estimasi volume material bangunan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       SLIDE 4 — APA ITU VITBARA?
+       ======================================================================== -->
+    <section id="slide-4" class="section section-bg-secondary">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge-tag">Solusi Belajar Inovatif</div>
+          <h2 class="section-title">VITBARA Hadir untuk Membuat Geometri Lebih Bermakna</h2>
+          <p class="section-subtitle">
+            Media pembelajaran digital yang mentransformasikan pembelajaran matematika menjadi pengalaman eksploratif
+            yang imersif dan kontekstual.
+          </p>
+        </div>
+
+        <div class="value-cards-grid">
+          <!-- Value 1 -->
+          <div class="value-card">
+            <div class="value-card-icon-wrap">🎯</div>
+            <h3 class="value-card-title">Visualisasi</h3>
+            <p class="value-card-desc">
+              Membantu siswa melihat, membedah, dan memahami konsep bangun ruang secara lebih nyata melalui visualisasi
+              3 dimensi dan simulasi interaktif.
+            </p>
+          </div>
+
+          <!-- Value 2 -->
+          <div class="value-card">
+            <div class="value-card-icon-wrap">🏛</div>
+            <h3 class="value-card-title">Eksplorasi Budaya</h3>
+            <p class="value-card-desc">
+              Menghubungkan matematika dengan kekayaan cagar budaya Benteng Fort Willem I, menumbuhkan apresiasi sejarah
+              sekaligus literasi numerasi.
+            </p>
+          </div>
+
+          <!-- Value 3 -->
+          <div class="value-card">
+            <div class="value-card-icon-wrap">🧠</div>
+            <h3 class="value-card-title">Melatih Spasial</h3>
+            <p class="value-card-desc">
+              Mengembangkan kemampuan penalaran spasial siswa dalam membayangkan, menganalisis, dan memecahkan
+              permasalahan bangun ruang tiga dimensi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       SLIDE 5 — ALUR BELAJAR DI VITBARA (ROADMAP / JOURNEY)
+       ======================================================================== -->
+    <section id="slide-5" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge-tag">Learning Journey</div>
+          <h2 class="section-title">Alur Belajar di VITBARA</h2>
+          <p class="section-subtitle">
+            Ikuti 5 tahapan pembelajaran bertahap untuk menguasai konsep bangun ruang secara
+            optimal.
+          </p>
+        </div>
+
+        <div class="roadmap-timeline">
+          <!-- Step 1 -->
+          <div class="roadmap-step">
+            <div class="roadmap-step-badge">
+              🏰
+              <span class="roadmap-step-num">1</span>
+            </div>
+            <h3 class="roadmap-step-title">Kenali Benteng</h3>
+            <p class="roadmap-step-desc">Pelajari sejarah, konteks arsitektur, dan denah Benteng Fort Willem I.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="roadmap-step">
+            <div class="roadmap-step-badge">
+              📐
+              <span class="roadmap-step-num">2</span>
+            </div>
+            <h3 class="roadmap-step-title">Pelajari Konsep Geometri</h3>
+            <p class="roadmap-step-desc">Buka E-Modul interaktif bangun ruang sisi datar dan sisi lengkung.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="roadmap-step">
+            <div class="roadmap-step-badge">
+              🥽
+              <span class="roadmap-step-num">3</span>
+            </div>
+            <h3 class="roadmap-step-title">Eksplorasi Virtual Tour</h3>
+            <p class="roadmap-step-desc">Jelajahi sudut benteng 360° dan temukan hotspot konsep matematika.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="roadmap-step">
+            <div class="roadmap-step-badge">
+              🎮
+              <span class="roadmap-step-num">4</span>
+            </div>
+            <h3 class="roadmap-step-title">Game Learning</h3>
+            <p class="roadmap-step-desc">Uji ketangkasan berpikir lewat kuis tantangan spasial yang seru.</p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="roadmap-step">
+            <div class="roadmap-step-badge">
+              📝
+              <span class="roadmap-step-num">5</span>
+            </div>
+            <h3 class="roadmap-step-title">Evaluasi Pemahaman</h3>
+            <p class="roadmap-step-desc">Uji pemahaman komprehensif dan peroleh umpan balik hasil belajar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       SLIDE 6 — PROFIL PENGEMBANG
+       ======================================================================== -->
+    <section id="slide-6" class="section section-bg-secondary">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge-tag">Tim Pengembang</div>
+          <h2 class="section-title">Tentang Pengembang VITBARA</h2>
+          <p class="section-subtitle">
+            Dikembangkan oleh Tim PKM RSH VITBARA - Universitas Muhammadiyah Semarang
+            untuk penelitian terkait kemampuan spasial siswa.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <!-- Dosen Pembimbing -->
+          <div class="team-card team-card-advisor">
+            <div class="team-avatar-wrap">
+              <img src="assets/images/team/dosen.png" alt="Dr. Venissa Dian Mawarsari, M.Pd." width="96" height="96"
+                loading="lazy">
+            </div>
+            <span class="team-role-tag team-role-advisor">🎓 Dosen Pembimbing</span>
+            <h3 class="team-name">Dr. Venissa Dian Mawarsari, M.Pd.</h3>
+            <p class="team-meta">NUPTK: 8136764665231113</p>
+            <p class="team-department">Dosen Pendidikan Matematika</p>
+            <p class="team-univ">Universitas Muhammadiyah Semarang</p>
+          </div>
+
+          <!-- Ketua Tim -->
+          <div class="team-card">
+            <div class="team-avatar-wrap">
+              <img src="assets/images/team/ketua-tim.png" alt="Ivan Arianto" width="96" height="96" loading="lazy">
+            </div>
+            <span class="team-role-tag">👤 Ketua Tim</span>
+            <h3 class="team-name">Ivan Arianto</h3>
+            <p class="team-meta">NIM: B2B023048</p>
+            <p class="team-department">S-1 Pendidikan Matematika</p>
+            <p class="team-univ">Universitas Muhammadiyah Semarang</p>
+          </div>
+
+          <!-- Anggota 1 -->
+          <div class="team-card">
+            <div class="team-avatar-wrap">
+              <img src="assets/images/team/anggota1.png" alt="Dina Trisnawati" width="96" height="96" loading="lazy">
+            </div>
+            <span class="team-role-tag">👤 Anggota Tim</span>
+            <h3 class="team-name">Dina Trisnawati</h3>
+            <p class="team-meta">NIM: B2B023046</p>
+            <p class="team-department">S-1 Pendidikan Matematika</p>
+            <p class="team-univ">Universitas Muhammadiyah Semarang</p>
+          </div>
+
+          <!-- Anggota 2 -->
+          <div class="team-card">
+            <div class="team-avatar-wrap">
+              <img src="assets/images/team/anggota2.png" alt="Afifah Nuraini" width="96" height="96" loading="lazy">
+            </div>
+            <span class="team-role-tag">👤 Anggota Tim</span>
+            <h3 class="team-name">Afifah Nuraini</h3>
+            <p class="team-meta">NIM: 15142420039</p>
+            <p class="team-department">S-1 Pendidikan Matematika</p>
+            <p class="team-univ">Universitas Muhammadiyah Semarang</p>
+          </div>
+
+          <!-- Anggota 3 -->
+          <div class="team-card">
+            <div class="team-avatar-wrap">
+              <img src="assets/images/team/anggota3.png" alt="Destavio Arthayana Putri" width="96" height="96"
+                loading="lazy">
+            </div>
+            <span class="team-role-tag">👤 Anggota Tim</span>
+            <h3 class="team-name">Destavio Arthayana Putri</h3>
+            <p class="team-meta">NIM: 13182520177</p>
+            <p class="team-department">S-1 Informatika</p>
+            <p class="team-univ">Universitas Muhammadiyah Semarang</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       SLIDE 7 — FAQ / BANTUAN PENGGUNA (ACCORDION)
+       ======================================================================== -->
+    <section id="slide-7" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge-tag">Pusat Bantuan</div>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">
+            Temukan jawaban atas pertanyaan umum mengenai VITBARA.
+          </p>
+        </div>
+
+        <div class="faq-accordion-wrap">
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <button type="button" class="faq-header" aria-expanded="false">
+              <span>Apa itu VITBARA?</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-body">
+              <div class="faq-content">
+                VITBARA (Virtual Tour Bangun Ruang) merupakan media pembelajaran matematika berbasis website yang
+                memanfaatkan teknologi virtual tour untuk membantu siswa memahami konsep geometri melalui eksplorasi
+                objek budaya Benteng Fort Willem I.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button type="button" class="faq-header" aria-expanded="false">
+              <span>Materi matematika apa yang dipelajari di VITBARA?</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-body">
+              <div class="faq-content">
+                Siswa akan mempelajari materi bangun ruang melalui berbagai aktivitas pembelajaran yang tersedia dalam
+                VITBARA.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button type="button" class="faq-header" aria-expanded="false">
+              <span>Perangkat apa saja yang dapat digunakan untuk mengakses VITBARA?</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-body">
+              <div class="faq-content">
+                VITBARA dapat digunakan melalui:
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                  <li>Laptop/Komputer</li>
+                  <li>Tablet</li>
+                  <li>Smartphone</li>
+                </ul>
+                Dengan browser modern seperti Google Chrome, Microsoft Edge, dan Mozilla Firefox.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button type="button" class="faq-header" aria-expanded="false">
+              <span>Apakah VITBARA harus diinstal?</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-body">
+              <div class="faq-content">
+                Tidak. VITBARA berbasis website sehingga dapat digunakan langsung melalui browser.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button type="button" class="faq-header" aria-expanded="false">
+              <span>Apakah VITBARA membutuhkan koneksi internet?</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-body">
+              <div class="faq-content">
+                Ya. Koneksi internet dibutuhkan terutama untuk menjalankan virtual tour dan konten multimedia.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item">
+            <button type="button" class="faq-header" aria-expanded="false">
+              <span>Apa yang harus dilakukan jika virtual tour tidak berjalan dengan lancar?</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-body">
+              <div class="faq-content">
+                Periksa koneksi internet, gunakan browser versi terbaru, dan pastikan perangkat memiliki sumber daya
+                yang cukup.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-more-btn-wrap">
+          <button type="button" id="moreFaqBtn" class="btn btn-outline">
+            <span class="btn-icon">💬</span> More FAQ &amp; Hubungi Kami
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-col">
+          <div class="footer-brand">
+            <img src="assets/images/logos/logo unimus putih.png" alt="UNIMUS" height="38">
+            <img src="assets/images/logos/logo vitbara putih.png" alt="VITBARA" height="38">
+          </div>
+          <p class="footer-desc">
+            <strong>VITBARA (Virtual Tour Bangun Ruang)</strong> adalah media pembelajaran matematika interaktif yang
+            mengintegrasikan materi geometri bangun ruang SMP kelas 9 dengan eksplorasi arsitektur bersejarah Benteng
+            Fort Willem I (Benteng Pendem Ambarawa).
+          </p>
+          <div class="footer-portal-wrapper">
+            <a href="admin/login.php" class="footer-portal-card" title="Masuk ke Portal Administrator">
+              <div class="portal-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+              <div class="portal-card-content">
+                <span class="portal-card-tag">
+                  <span class="portal-status-dot"></span> Akses Khusus
+                </span>
+                <span class="portal-card-title">Portal Administrator</span>
+              </div>
+              <div class="portal-card-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigasi Cepat -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigasi Utama</h4>
+          <ul class="footer-links">
+            <li><a href="index.php" class="footer-link"><span>›</span> Home</a></li>
+            <li><a href="sejarah.php" class="footer-link"><span>›</span> Sejarah Benteng</a></li>
+            <li><a href="emodul.php" class="footer-link"><span>›</span> E-Modul Geometri</a></li>
+            <li><a href="eksplor-vr.php" class="footer-link"><span>›</span> Eksplor VR 360°</a></li>
+            <li><a href="game-learning.php" class="footer-link"><span>›</span> Game Learning</a></li>
+            <li><a href="evaluasi.php" class="footer-link"><span>›</span> Evaluasi Belajar</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Informasi & Bantuan -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Bantuan &amp; Info</h4>
+          <ul class="footer-links">
+            <li><a href="#slide-4" class="footer-link"><span>›</span> Tentang VITBARA</a></li>
+            <li><a href="#slide-5" class="footer-link"><span>›</span> Alur Pembelajaran</a></li>
+            <li><a href="#slide-6" class="footer-link"><span>›</span> Profil Pengembang</a></li>
+            <li><a href="#slide-7" class="footer-link"><span>›</span> Tanya Jawab (FAQ)</a></li>
+            <li><a href="contact.php" class="footer-link"><span>›</span> Hubungi Kami</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Kontak & Institusi -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Kontak &amp; Kampus</h4>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📍</span>
+            <div>
+              <strong>Universitas Muhammadiyah Semarang</strong><br>
+              Jl. Kedungmundu Raya No.18, Semarang<br>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">✉️</span>
+            <div>vitbarapkmrsh@gmail.com</div>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📞</span>
+            <div>+62 896-7826-1594</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom copyright -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 <strong>VITBARA</strong> &mdash; Tim PKM RSH UNIMUS. All Rights Reserved.
+        </div>
+        <div>
+          Pembelajaran Matematika &bull; <em>Virtual Tour</em> Benteng Fort Willem I
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main Scripts -->
+  <script src="assets/js/main.js?v=1.0.0"></script>
+</body>
+
+</html>
